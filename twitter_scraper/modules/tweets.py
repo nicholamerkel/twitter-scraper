@@ -18,7 +18,7 @@ def get_tweets(query, party, numTweets = 500):
     after_part = f'include_available_features=1&include_entities=1&include_new_items_bar=true'
     url = f'https://twitter.com/i/profiles/show/{query}/timeline/tweets?'
     url += after_part
-    workbook = xlsxwriter.Workbook('../results/twitter/scrubbed_tweets/' + query + '.xlsx') # into albert's data folder
+    workbook = xlsxwriter.Workbook('scrubbed_tweets/' + query + '.xlsx')
     worksheet = workbook.add_worksheet()
 
 

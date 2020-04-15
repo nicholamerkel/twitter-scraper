@@ -32,11 +32,12 @@ def get_tweets(query, party, numTweets = 500):
     }
 
     def gen_tweets(party,numTweets):
+        print("num tweets: ", numTweets)
         r = session.get(url, headers=headers)
         row = 0
         pages = 1
 
-        while pages > 0:
+        while pages > 0 and row < numTweets:
             try:
                 html = HTML(html=r.json()['items_html'],
                             url='bunk', default_encoding='utf-8')
